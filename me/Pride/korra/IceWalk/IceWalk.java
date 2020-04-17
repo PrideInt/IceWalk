@@ -36,7 +36,6 @@ public class IceWalk extends IceAbility implements AddonAbility {
 	private long regenTime;
 	
 	private long time;
-	public boolean toggled;
 	
 	private Material feetMaterial;
 	private TempBlock ice;
@@ -64,19 +63,9 @@ public class IceWalk extends IceAbility implements AddonAbility {
 		
 		time = System.currentTimeMillis();
 		
-		if (toggled) {
-			ActionBar.sendActionBar(ChatColor.AQUA + "" + ChatColor.BOLD + "UNTOGGLED", player);
+		ActionBar.sendActionBar(ChatColor.AQUA + "" + ChatColor.BOLD + "" + ChatColor.UNDERLINE + "TOGGLED", player);
 			
-			toggled = false;
-			
-			bPlayer.addCooldown(this);
-		} else {
-			ActionBar.sendActionBar(ChatColor.AQUA + "" + ChatColor.BOLD + "TOGGLED", player);
-			
-			toggled = true;
-			
-			start();
-		}
+		start();
 	}
 
 	@Override
